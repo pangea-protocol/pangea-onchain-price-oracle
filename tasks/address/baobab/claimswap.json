@@ -1,0 +1,19 @@
+{
+  "0xe4da7F04Be81a0B3FF8e7bfa154845dab98ae1f6": {
+    "name": "ClaimToken",
+    "service": "Claimswap"
+  },
+  "0x79841BFF57F826aB6F1AE8dBC68a564375AA878F": {
+    "name": "UniswapV2Factory",
+    "service": "Claimswap"
+  },
+  "0xB1C4C22FeE13DA89E8D983227d9dc6314E29894a": {
+    "name": "UniswapV2Router02",
+    "service": "Claimswap"
+  },
+  "0x60Cd78c3edE4d891455ceAeCfA97EECD819209cF": {
+    "name": "WKLAY",
+    "symbol": "WKLAY",
+    "service": "Claimswap"
+  }
+}

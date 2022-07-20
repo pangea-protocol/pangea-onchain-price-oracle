@@ -1,0 +1,34 @@
+{
+  "0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654": {
+    "name": "Factory",
+    "service": "KLAYswap"
+  },
+  "0x71b59e4bc2995b57aa03437ed645ada7dd5b1890": {
+    "name": "PoolVoting",
+    "service": "KLAYswap"
+  },
+  "0x2F3713F388BC4b8b364a7A2d8D57c5Ff4E054830": {
+    "name": "VotingKSP",
+    "service": "KLAYswap"
+  },
+  "0x29990aaF04f3D5Ac7d8C88beab1A009C1Ab4936e": {
+    "name": "Treasury",
+    "service": "KLAYswap"
+  },
+  "0x05343b228d61402e84d973ce114f34bc3f9e5987": {
+    "name": "Governor",
+    "service": "KLAYswap"
+  },
+  "0xd1890d8f02f4c63553658ba49c53a82eb84009e6": {
+    "name": "SinglePool Factory",
+    "service": "KLAYswap"
+  },
+  "0x1289550d988177575154c2CA45c95CCfb32F837d": {
+    "name": "Store",
+    "service": "KLAYswap"
+  },
+  "0x7A74B3be679E194E1D6A0C29A343ef8D2a5AC876": {
+    "name": "Utils",
+    "service": "KLAYswap"
+  }
+}

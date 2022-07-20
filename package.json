@@ -15,6 +15,8 @@
     "build": "TS_NODE_TRANSPILE_ONLY=1 hardhat compile --network hardhat",
     "clean": "hardhat clean",
     "hardhat:deploy": "hardhat node --network hardhat",
+    "baobab:deploy": "hardhat --network baobab deploy",
+    "baobab:export": "hardhat --network baobab export",
     "mainnet:deploy": "hardhat --network mainnet deploy",
     "mainnet:export": "hardhat --network mainnet export",
     "test": "hardhat test --network hardhat",

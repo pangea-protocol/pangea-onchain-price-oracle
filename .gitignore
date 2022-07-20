@@ -1,0 +1,63 @@
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Swap the comments on the following lines if you don't wish to use zero-installs
+# Documentation here: https://yarnpkg.com/features/zero-installs
+!.yarn/cache
+#.pnp.*
+
+# Webstorm
+.idea/
+
+# Openzeppelin
+.openzeppelin
+
+# Node
+node_modules/
+
+# Hardhat
+cache/
+artifacts/
+
+# Deployments
+deployments/localhost/
+deployments/klaytnlocal/
+deployments/abis/
+
+# Typechain
+types/
+typechain/
+
+# Exports
+exports/
+
+# Env
+.env
+
+# Coverage
+coverage/
+coverage.json
+
+# Temp/hardhat stuff that shouldn't be pushed
+local/
+
+tenderly.yaml
+
+# Certora
+.certora_config
+.last_confs
+.certora_build.json
+.certora_metadata.json
+.certora_recent_jobs.json
+.certora_verify.json
+/deployments/hardhat/
+
+# docgen
+docs/
+
+# testKey
+privateKeys.json

@@ -12,8 +12,8 @@ const deployFunction: DeployFunction = async function ({
   const priceOracle = (await ethers.getContract("PriceOracle")) as PriceOracle;
 
   const stables = [
-    "0x91cD54795be0A59Eaa949Ae4ea2D5288D0b11995",
-    "0x3185206Bc408D4a0cb948c4D245Bfbda50067aeC",
+    "0x53e6905F2E6650E2946F884DBcE7d5c116891aff",
+    "0x020eDa56755da20872F8bBb19327402f781f06FD",
   ];
   for (const stable of stables) {
     try {

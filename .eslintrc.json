@@ -1,0 +1,18 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "node": true
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "warn"
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended"
+  ]
+}

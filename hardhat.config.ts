@@ -24,13 +24,13 @@ const config: HardhatUserConfig = {
     },
     baobab: {
       chainId: 1001,
-      url: "http://ec2-3-34-95-95.ap-northeast-2.compute.amazonaws.com:8551/",
+      url: "https://public-node-api.klaytnapi.com/v1/baobab",
       accounts: [process.env.DEPLOYER_ADDRESS!, process.env.DEV_ADDRESS!],
       gasPrice: 250000000000,
     },
     cypress: {
       chainId: 8217,
-      url: "https://ken.stick.us/",
+      url: "https://public-node-api.klaytnapi.com/v1/cypress",
       accounts: [process.env.DEPLOYER_ADDRESS!, process.env.DEV_ADDRESS!],
       gasPrice: 250000000000,
     },

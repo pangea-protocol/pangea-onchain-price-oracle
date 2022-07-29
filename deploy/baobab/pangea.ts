@@ -12,8 +12,8 @@ const deployFunction: DeployFunction = async function ({
   const { deploy } = deployments;
   const { deployer, dev } = await ethers.getNamedSigners();
 
-  const factory = "0x0846b68C4C72C8940B402217CDfD63706071bEc5";
-  const wklay = "0x3e825cbA8d59Eb0E62A24Db1A8F85158d30A26c3";
+  const factory = "0x0Aa43C5be7E7AfdebFDb06c5B9922173f4c1A46b";
+  const wklay = "0x0339d5Eb6D195Ba90B13ed1BCeAa97EbD198b106";
 
   const deployResult = await deploy("PangeaReserve", {
     from: deployer.address,

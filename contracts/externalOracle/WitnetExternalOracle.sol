@@ -23,10 +23,10 @@ contract WitnetExternalOracle is IExternalOracle, OwnableUpgradeable {
 
     // Calculation
     // >   value = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(text));
-    //
-    // price-KLAY/USD-6 : 0x6cc828d1f864e45b78cb57a1e4ee8b4b413e8404fbe6e4d75d0bfc80b7a4f3ef
-    // price-KSP/USD-6  : 0x54a1a0e637c10f1ac6b1e27bf4de2b6fec9cf1786ce47001f38f8b32dad9884f
-    // price-USDT/USD-6 : 0x538f5a25b39995a23c24037d2d38f979c8fa7b00d001e897212d936e6f6556ef
+    // * reference : https://docs.witnet.io/smart-contracts/witnet-data-feeds/addresses/klaytn-price-feeds
+    // Price-KLAY/USD-6 : 0x6cc828d1f864e45b78cb57a1e4ee8b4b413e8404fbe6e4d75d0bfc80b7a4f3ef
+    // Price-KSP/USD-6  : 0x54a1a0e637c10f1ac6b1e27bf4de2b6fec9cf1786ce47001f38f8b32dad9884f
+    // Price-USDT/USD-6 : 0x538f5a25b39995a23c24037d2d38f979c8fa7b00d001e897212d936e6f6556ef
     function register(address token, bytes32 value, uint8 decimals) external onlyOwner {
         values[token] = value;
         decimalsForValue[value] = decimals;

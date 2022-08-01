@@ -8,7 +8,7 @@ const deployFunction: DeployFunction = async function ({
   deployments,
   network,
 }: HardhatRuntimeEnvironment) {
-  if (network.name !== "baobab") return;
+  // if (network.name !== "baobab") return;
   const { deploy } = deployments;
   const { deployer, dev } = await ethers.getNamedSigners();
 

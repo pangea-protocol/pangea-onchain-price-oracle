@@ -45,8 +45,9 @@ interface IPriceOracle {
 
     /// @notice look up Token dollar price using reference token (units : 10 ^ -6 $)
     /// @param token token address
+    /// @param referenceTokens list of token address to refer dollar price 
     /// @dev infer the dollar price based on the pair pool with the reference token
-    function consultPriceFrom(address token, address referenceToken) external view returns (uint256 price);
+    function consultPriceFrom(address token, address[] memory referenceTokens) external view returns (uint256 price);
 }
 ````
 

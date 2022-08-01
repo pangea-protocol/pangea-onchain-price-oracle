@@ -12,9 +12,9 @@ const deployFunction: DeployFunction = async function ({
 
   const router = "0xD39D4d972C7E166856c4eb29E54D3548B4597F53";
 
-  await deploy("WitnetOracle", {
+  await deploy("WitnetExternalOracle", {
     from: deployer.address,
-    contract: "WitnetOracle",
+    contract: "WitnetExternalOracle",
     proxy: {
       owner: dev.address,
       proxyContract: "OpenZeppelinTransparentProxy",

@@ -10,6 +10,10 @@ import "./tasks";
 
 import { HardhatUserConfig } from "hardhat/config";
 
+const accounts = {
+  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
+};
+
 const config: HardhatUserConfig = {
   defaultNetwork: process.env.NETWORK ? process.env.NETWORK : "cypress",
   networks: {
@@ -25,7 +29,7 @@ const config: HardhatUserConfig = {
     baobab: {
       chainId: 1001,
       url: "https://public-node-api.klaytnapi.com/v1/baobab",
-      accounts: [process.env.DEPLOYER_ADDRESS!, process.env.DEV_ADDRESS!],
+      accounts,
       gasPrice: 250000000000,
     },
     cypress: {

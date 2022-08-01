@@ -4,6 +4,6 @@ pragma solidity >=0.8.0;
 
 interface IExternalOracle {
 
-    function consultKlayPrice() external view returns (uint256);
+    function consultPrice(address token) external view returns (uint256);
 
 }

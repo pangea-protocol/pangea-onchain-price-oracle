@@ -25,7 +25,7 @@ task("price", "show dollar price of token in onchain Liquidity")
       const referenceAddress = readTokenAddress(referenceToken, network.name);
       price = await priceOracle.consultPriceFrom(
         tokenAddress,
-        referenceAddress
+        [referenceAddress]
       );
     } else if (token.toLowerCase() == "klay") {
       price = await priceOracle.consultKlayPrice();

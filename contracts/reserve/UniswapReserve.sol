@@ -22,14 +22,9 @@ contract UniswapReserve is IPairReserve, Initializable {
     }
 
     function getReserve(address token0, address token1) external view returns (uint256 reserve0, uint256 reserve1) {
-        return _getReserve(token0, token1);
-    }
+        token0 = token0 == address(0) ? wklay : token0;
+        token1 = token1 == address(0) ? wklay : token1;
 
-    function getKlayReserve(address token) external view returns (uint256 klayReserve, uint256 tokenReserve) {
-        return _getReserve(wklay, token);
-    }
-
-    function _getReserve(address token0, address token1) internal view returns (uint256 reserve0, uint256 reserve1) {
         address pool = factory.getPair(token0, token1);
         if (pool == address(0)) return (0, 0);
         (uint112 _reserve0, uint112 _reserve1,) = IUniswapV2Pair(pool).getReserves();

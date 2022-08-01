@@ -1,5 +1,5 @@
 {
-  "address": "0x53868e5fd6c388484FB132c50C241c8023ED3Ac3",
+  "address": "0x6118AeaE305B4F0F6dE3A1B4b3aD2cc1610Bb96f",
   "abi": [
     {
       "anonymous": false,
@@ -125,13 +125,70 @@
       "type": "event"
     },
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
       "inputs": [],
-      "name": "consultKlayPrice",
+      "name": "DECIMALS",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "consultPrice",
       "outputs": [
         {
           "internalType": "uint256",
           "name": "price",
           "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "decimalsForValue",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
@@ -148,6 +205,81 @@
       "name": "initialize",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "value",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "decimals",
+          "type": "uint8"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "values",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -185,38 +317,52 @@
       "type": "constructor"
     }
   ],
-  "transactionHash": "0x011c6a27356e1ad74c93c7de9d8182e53933ed646cb2802ba45f1807c384a422",
+  "transactionHash": "0xa5e7ba7bc9bfac7c650c05f7182c4187cd2085c02d6d8bbb4243023d5e5a5403",
   "receipt": {
     "to": null,
     "from": "0x23004B8aD485cEf5C15f8D2868049aB4b2788B0b",
-    "contractAddress": "0x53868e5fd6c388484FB132c50C241c8023ED3Ac3",
+    "contractAddress": "0x6118AeaE305B4F0F6dE3A1B4b3aD2cc1610Bb96f",
     "transactionIndex": 0,
-    "gasUsed": "817970",
-    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000020400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000",
-    "blockHash": "0xe87c4545cff878910d98415a6f71188b7e342e92738d66450bddce3069b7893d",
-    "transactionHash": "0x011c6a27356e1ad74c93c7de9d8182e53933ed646cb2802ba45f1807c384a422",
+    "gasUsed": "861264",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000001000000000000000100400000000080000000000000000000000000000000000000000000000400000000000000000200000000000000000000000000000000000000000000040000000000000000000000000000000022000020000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x31e4c57993b4a1695f9de3992a9f2b5634de95850d4fc620771dd4457e374a2c",
+    "transactionHash": "0xa5e7ba7bc9bfac7c650c05f7182c4187cd2085c02d6d8bbb4243023d5e5a5403",
     "logs": [
       {
         "transactionIndex": 0,
-        "blockNumber": 96730842,
-        "transactionHash": "0x011c6a27356e1ad74c93c7de9d8182e53933ed646cb2802ba45f1807c384a422",
-        "address": "0x53868e5fd6c388484FB132c50C241c8023ED3Ac3",
+        "blockNumber": 97764468,
+        "transactionHash": "0xa5e7ba7bc9bfac7c650c05f7182c4187cd2085c02d6d8bbb4243023d5e5a5403",
+        "address": "0x6118AeaE305B4F0F6dE3A1B4b3aD2cc1610Bb96f",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x00000000000000000000000023004b8ad485cef5c15f8d2868049ab4b2788b0b"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0x31e4c57993b4a1695f9de3992a9f2b5634de95850d4fc620771dd4457e374a2c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 97764468,
+        "transactionHash": "0xa5e7ba7bc9bfac7c650c05f7182c4187cd2085c02d6d8bbb4243023d5e5a5403",
+        "address": "0x6118AeaE305B4F0F6dE3A1B4b3aD2cc1610Bb96f",
         "topics": [
           "0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498"
         ],
         "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
-        "logIndex": 0,
-        "blockHash": "0xe87c4545cff878910d98415a6f71188b7e342e92738d66450bddce3069b7893d"
+        "logIndex": 1,
+        "blockHash": "0x31e4c57993b4a1695f9de3992a9f2b5634de95850d4fc620771dd4457e374a2c"
       }
     ],
-    "blockNumber": 96730842,
-    "cumulativeGasUsed": "817970",
+    "blockNumber": 97764468,
+    "cumulativeGasUsed": "861264",
     "status": 1,
     "byzantium": true
   },
   "args": [
-    "0x6c7917a03f30581359c619C4272CEE39A54d2464",
-    "0xffCBeaCb7582D4297E984ba3c2f0614351D5646b",
+    "0xAF3CEac01806c97B696aA268500A5B8Aef167531",
+    "0xa7F90c8fA00a58CD75661619441f7370D3704E7F",
     "0xc4d66de8000000000000000000000000ed074da2a76fd2ca90c1508930b4fb4420e413b0"
   ],
   "numDeployments": 1,
@@ -230,7 +376,7 @@
       "0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0"
     ]
   },
-  "implementation": "0x6c7917a03f30581359c619C4272CEE39A54d2464",
+  "implementation": "0xAF3CEac01806c97B696aA268500A5B8Aef167531",
   "devdoc": {
     "details": "This contract implements a proxy that is upgradeable by an admin.  To avoid https://medium.com/nomic-labs-blog/malicious-backdoors-in-ethereum-proxies-62629adf3357[proxy selector clashing], which can potentially be used in an attack, this contract uses the https://blog.openzeppelin.com/the-transparent-proxy-pattern/[transparent proxy pattern]. This pattern implies two things that go hand in hand:  1. If any account other than the admin calls the proxy, the call will be forwarded to the implementation, even if that call matches one of the admin functions exposed by the proxy itself. 2. If the admin calls the proxy, it can access the admin functions, but its calls will never be forwarded to the implementation. If the admin tries to call a function on the implementation it will fail with an error that says \"admin cannot fallback to proxy target\".  These properties mean that the admin account can only be used for admin actions like upgrading the proxy or changing the admin, so it's best if it's a dedicated account that is not used for anything else. This will avoid headaches due to sudden errors when trying to call a function from the proxy implementation.  Our recommendation is for the dedicated account to be an instance of the {ProxyAdmin} contract. If set up this way, you should think of the `ProxyAdmin` instance as the real administrative inerface of your proxy.",
     "events": {

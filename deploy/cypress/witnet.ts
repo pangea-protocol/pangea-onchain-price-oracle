@@ -47,10 +47,11 @@ const deployFunction: DeployFunction = async function ({
       ethers.utils.toUtf8Bytes("Price-KLAY/USD-6")
     );
     await doExecute(witnet.register(klay, value, 6));
+    await doExecute(
+      oracle.registerTokenOracle(klay, witnet.address)
+    );
   }
-  await doExecute(
-    oracle.registerTokenOracle(ethers.constants.AddressZero, witnet.address)
-  );
+
   await doExecute(
     oracle.registerBaseToken(ethers.constants.AddressZero)
   )
@@ -66,21 +67,9 @@ const deployFunction: DeployFunction = async function ({
     await doExecute(oracle.registerTokenOracle(usdt, witnet.address));
     await doExecute(oracle.registerBaseToken(usdt));
   }
-
-  for (const ksp of [
-    "0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654",
-  ]) {
-    const value = ethers.utils.keccak256(
-      ethers.utils.toUtf8Bytes("Price-KSP/USD-6")
-    );
-
-    await doExecute(witnet.register(ksp, value, 6));
-    await doExecute(oracle.registerTokenOracle(ksp, witnet.address));
-    await doExecute(oracle.registerBaseToken(ksp));
-  }
 };
 export default deployFunction;
 
-deployFunction.dependencies = ["priceOracle"];
+// deployFunction.dependencies = ["priceOracle"];
 
-deployFunction.tags = ["witnet", "cypress"];
+deployFunction.tags = ["witnet1", "cypress"];

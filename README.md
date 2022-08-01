@@ -57,9 +57,7 @@ interface IPriceOracle {
 yarn install
 ````
 
-### Limitations
+### References
 
-1. Assume the price of DAI/USDT/USDC is pegged to $1. if de-pegging happens, we will remove it from the stablecoin list.
-
-2. The price of the klay is fetched
+1. The price of base token is fetched
    through [the witnet oracle](https://feeds.witnet.io/klaytn/klaytn-testnet_klay-usdt_6).

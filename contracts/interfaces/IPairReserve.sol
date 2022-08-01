@@ -9,6 +9,4 @@ interface IPairReserve {
 
     function getReserve(address token0, address token1) external view returns (uint256 reserve0, uint256 reserve1);
 
-    function getKlayReserve(address token) external view returns (uint256 klayReserve, uint256 tokenReserve);
-
 }

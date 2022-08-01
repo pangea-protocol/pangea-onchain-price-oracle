@@ -18,5 +18,5 @@ interface IPriceOracle {
     /// @notice referenceToken 가격을 바탕으로 토큰의 price 가져오기 (units : 10 ^ -6 $)
     /// @param token 조회할 토큰의 주소
     /// @dev (클레이 / DAI / USDC / USDT)와의 페어 풀이 하나도 없는 경우, referenceToken과의 페어풀을 바탕으로 가격을 추론합니다
-    function consultPriceFrom(address token, address referenceToken) external view returns (uint256 price);
+    function consultPriceFrom(address token, address[] memory referenceTokens) external view returns (uint256 price);
 }

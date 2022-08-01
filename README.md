@@ -27,7 +27,7 @@ yarn hardhat price 0x34d21b1e550d73cee41151c77f3c73359527a396 # ETH price with
 
 ### 2. `contract` interfaces
 
-* cypress : `0x9BFDf8c6bB855F578D3b5e441F958496aE46eC24`
+* cypress : `0xb86d2142f5716aCeb703c43411BC70e05B7cDB0f`
 * baobab : `0x1386968c3fd2109f68dA87d9Cf9A967De72EBB6A`
 
 ````solidity

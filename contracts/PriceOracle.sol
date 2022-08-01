@@ -41,6 +41,10 @@ contract PriceOracle is IPriceOracle, IPriceOracleError, OwnableUpgradeable {
         tokenPriceOracles[_token] = _priceOracle;
     }
 
+    function unRegisterTokenOracle(address _token) external onlyOwner {
+        tokenPriceOracles[_token] = address(0);
+    }
+
     function registerBaseToken(address token) external onlyOwner {
         if (tokenPriceOracles[token] == address(0)) revert NOT_REGISTERED_ORACLE();
         if (isBaseToken[token]) revert ALREADY_REGISTERED();
@@ -126,6 +130,10 @@ contract PriceOracle is IPriceOracle, IPriceOracleError, OwnableUpgradeable {
     ) internal view returns (uint256) {
         uint8 decimals = baseToken == address(0) ? 18 : IERC20Metadata(baseToken).decimals();
         uint256 price = IExternalOracle(tokenPriceOracles[baseToken]).consultPrice(baseToken);
-        return FullMath.mulDiv(amount, price, 10 ** (18 + DECIMAL - decimals));
+        if (decimals > 18) {
+            return FullMath.mulDiv(amount, price, 10 ** (decimals - 18 + DECIMAL));
+        } else {
+            return FullMath.mulDiv(amount, price * 10 ** (18 - decimals), 10 ** DECIMAL);
+        }
     }
 }

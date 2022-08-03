@@ -13,13 +13,13 @@ The price is determined by the liquidity at the time, so It is dangerous to use 
 
 ````shell
 yarn hardhat price kdai # DAI price
-> price: 1 $
+> price: 0.998156 $
 
 yarn hardhat price klay # KLAY price
-> price 0.700574 $
+> price 0.290369 $
 
 yarn hardhat price KETH # ETH price
-> price 2824.156292 $
+> price 1625.915993 $
 
 yarn hardhat price 0x34d21b1e550d73cee41151c77f3c73359527a396 # ETH price with
 > price : 2824.156292 $ 
@@ -27,7 +27,7 @@ yarn hardhat price 0x34d21b1e550d73cee41151c77f3c73359527a396 # ETH price with
 
 ### 2. `contract` interfaces
 
-* cypress : `0xb86d2142f5716aCeb703c43411BC70e05B7cDB0f`
+* cypress : `0xE37338548438b71313607259ecC45d93E380932a`
 * baobab : `0x1386968c3fd2109f68dA87d9Cf9A967De72EBB6A`
 
 ````solidity

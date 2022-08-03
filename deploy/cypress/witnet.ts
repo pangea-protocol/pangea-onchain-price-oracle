@@ -70,6 +70,6 @@ const deployFunction: DeployFunction = async function ({
 };
 export default deployFunction;
 
-// deployFunction.dependencies = ["priceOracle"];
+deployFunction.dependencies = ["priceOracle"];
 
-deployFunction.tags = ["witnet1", "cypress"];
+deployFunction.tags = ["witnet", "cypress"];

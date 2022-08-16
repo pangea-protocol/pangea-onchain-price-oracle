@@ -11,7 +11,9 @@ import "./tasks";
 import { HardhatUserConfig } from "hardhat/config";
 
 const accounts = {
-  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
+  mnemonic:
+    process.env.MNEMONIC ||
+    "test test test test test test test test test test test junk",
 };
 
 const config: HardhatUserConfig = {
@@ -42,9 +44,11 @@ const config: HardhatUserConfig = {
   namedAccounts: {
     deployer: {
       default: 0,
+      cypress: "0x2A2F23ff33671361010D357529BDF0adca9416Fc",
     },
     dev: {
       default: 1,
+      cypress: "0x9906594cF4CC26b62fEf0eA53CE159F4d2Ad9a32",
     },
   },
   paths: {

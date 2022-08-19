@@ -8,21 +8,19 @@ const deployFunction: DeployFunction = async function ({
   ethers,
   deployments,
   network,
-  getNamedAccounts,
 }: HardhatRuntimeEnvironment) {
   if (network.name !== "cypress") return;
   const { deploy } = deployments;
-  const { deployer } = await ethers.getNamedSigners();
-  const { dev } = await getNamedAccounts();
+  const { deployer, dev } = await ethers.getNamedSigners();
 
-  const factory = "0xA25ba09d8837F6319cD65B2345c0bbEa99c39Cb1";
-  const wklay = "0x2ff5f6de2287ca3075232127277e53519a77947c";
+  const factory = "0x3d94b5E3b83CbD52B9616930D33515613ADfAd67";
+  const wklay = "0xFF3e7cf0C007f919807b32b30a4a9E7Bd7Bc4121";
 
-  const deployResult = await deploy("palaReserve", {
+  const deployResult = await deploy("PangeaReserve", {
     from: deployer.address,
-    contract: "UniswapReserve",
+    contract: "PangeaReserve",
     proxy: {
-      owner: dev,
+      owner: dev.address,
       proxyContract: "OpenZeppelinTransparentProxy",
       execute: {
         init: {
@@ -48,4 +46,4 @@ export default deployFunction;
 
 deployFunction.dependencies = ["priceOracle"];
 
-deployFunction.tags = ["palaswap", "cypress"];
+deployFunction.tags = ["pangea", "baobab"];

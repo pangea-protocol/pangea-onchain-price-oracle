@@ -125,11 +125,19 @@ contract PriceOracle is IPriceOracle, IPriceOracleError, OwnableUpgradeable {
     }
 
     function adjustBaseReserveToDollarReserve(
-        address baseToken,
+        address _baseToken,
         uint256 amount
     ) internal view returns (uint256) {
-        uint8 decimals = baseToken == address(0) ? 18 : IERC20Metadata(baseToken).decimals();
-        uint256 price = IExternalOracle(tokenPriceOracles[baseToken]).consultPrice(baseToken);
+        uint8 decimals = _baseToken == address(0) ? 18 : IERC20Metadata(_baseToken).decimals();
+        address oracle = tokenPriceOracles[_baseToken];
+        uint256 price;
+        if (oracle != address(0)) {
+            price = IExternalOracle(oracle).consultPrice(_baseToken);
+        } else {
+            // if oracle does not exists...
+            price = evaluateDerivedTokenPrice(_baseToken, baseTokens);
+        }
+
         if (decimals > 18) {
             return FullMath.mulDiv(amount, price, 10 ** (decimals - 18 + DECIMAL));
         } else {

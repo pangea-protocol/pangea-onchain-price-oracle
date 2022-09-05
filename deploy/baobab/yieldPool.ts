@@ -12,10 +12,10 @@ const deployFunction: DeployFunction = async function ({
   const { deploy } = deployments;
   const { deployer, dev } = await ethers.getNamedSigners();
 
-  const factory = "0x2be2C91cCA2df52b41a9e42723c46fD029359c95";
+  const factory = "0xFf0756bE0a078C50605c46E7b0Cd470B07d7Ff4E";
   const wklay = "0x0339d5Eb6D195Ba90B13ed1BCeAa97EbD198b106";
 
-  const deployResult = await deploy("PangeaReserve", {
+  const deployResult = await deploy("YieldPangeaReserve", {
     from: deployer.address,
     contract: "PangeaReserve",
     proxy: {
@@ -38,6 +38,4 @@ const deployFunction: DeployFunction = async function ({
 };
 export default deployFunction;
 
-deployFunction.dependencies = ["priceOracle"];
-
-deployFunction.tags = ["pangea", "baobab"];
+deployFunction.tags = ["yieldPool", "baobab"];

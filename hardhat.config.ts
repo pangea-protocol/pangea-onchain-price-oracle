@@ -36,7 +36,7 @@ const config: HardhatUserConfig = {
     },
     cypress: {
       chainId: 8217,
-      url: "https://internal.ken.stick.us/",
+      url: "https://ken.stick.us/",
       accounts: [process.env.DEPLOYER_ADDRESS!, process.env.DEV_ADDRESS!],
       gasPrice: 250000000000,
     },

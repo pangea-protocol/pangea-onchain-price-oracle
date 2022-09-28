@@ -72,6 +72,7 @@ const deployFunction: DeployFunction = async function ({
   for (const usdt of [
     "0xcee8faf64bb97a73bb51e115aa89c17ffa8dd167", // orbit USDT
     "0xd6dAb4CfF47dF175349e6e7eE2BF7c40Bb8C05A3", // Synapse Assets
+    "0x5C13E303a62Fc5DEdf5B52D66873f2E59fEdADC2", // Wormhole USDT
   ]) {
     const value = ethers.utils.keccak256(
       ethers.utils.toUtf8Bytes("Price-USDT/USD-6")
